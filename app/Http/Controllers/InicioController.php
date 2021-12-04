@@ -53,5 +53,9 @@ class InicioController extends Controller
         return view('principal.infocurso',$data);
     }
 
+    public function contacto(){
+        return view('principal.contacto');
+    }
+
 
 }

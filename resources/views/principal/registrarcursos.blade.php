@@ -22,15 +22,7 @@
                             PayPal<br>
                             <img src="{{ asset('img/paypal.png')}}">
                         </a>
-                    </div>
-                    <div>
-                        <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                            Deposito
-                        </font></font><br>
-                            <img src="{{ asset('img/deposito.png')}}" alt=""
-                                 style="max-width: 125px; max-height: 125px;">
-                        </a>
-                    </div>
+                    </div> 
                     <div>
                         <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
                             Tarjeta de Credito

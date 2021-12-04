@@ -65,14 +65,9 @@
                 <div class="col-md-6"> 
                     <h5 >{{$usuario->name}}</h5>
                     <div>Educ. ID: 52600782</div>
-                    <div>Correo electrónico: {{$usuario->email}} </div>
-                    <div class="Cambiar Contraseña"><a href="#" tabindex="2100" target="_blank" rel="noopener noreferrer">Cambiar contraseña</a>
-                    </div> 
-                 
+                    <div>Correo electrónico: {{$usuario->email}} </div>                  
                 </div>              
               </div>
-                
-             
               <div class="tab-pane" id="settings">
                 <form class="form-horizontal" action="{{route('usuario.edit',$usuario->id)}}" method="post">
                     @csrf  @method('PATCH')  

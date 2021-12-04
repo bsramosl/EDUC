@@ -43,6 +43,11 @@ Route::get('regcurso/{id}',[InicioController::class,'registrocurso'])
 Route::get('infocurso/{id}',[InicioController::class,'infocurso']) 
 ->name('principal.infocurso');
 
+Route::get('contacto',[InicioController::class,'contacto']) 
+->name('principal.contacto');
+
+
+
 Route::get('dash',[AdminController::class,'dashboard'])
 ->name('admin.index');
 
