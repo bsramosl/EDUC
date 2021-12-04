@@ -8,38 +8,9 @@
     <div class="row">
         <div class="col-lg-8 col-md-7">
             <div class="field-item even"><h2>{{$curso->nombre}}</h2>
-                <p>{{$curso->descripcion}}  </p>
-                <p><strong>Aprenderá estas habilidades fundamentales:</strong></p>
-                <ul style="margin-bottom:20px;">
-                    <li>Cree cuentas de Facebook, LinkedIn y YouTube.</li>
-                    <li>Comprenda las redes informáticas y cómo navegar y buscar en Internet.</li>
-                    <li>Familiarícese con Microsoft Windows y cómo trabajar con archivos y carpetas.</li>
-                    <li>Identifique problemas comunes e implemente soluciones.</li>
-                </ul>
-                <div class="donation-options mobile-hidden">
-                    <div>
-                        <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">  
-                            PayPal<br>
-                            <img src="{{ asset('img/paypal.png')}}">
-                        </a>
-                    </div>
-                    <div>
-                        <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                            Deposito
-                        </font></font><br>
-                            <img src="{{ asset('img/deposito.png')}}" alt=""
-                                 style="max-width: 125px; max-height: 125px;">
-                        </a>
-                    </div>
-                    <div>
-                        <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                            Tarjeta de Credito
-                        </font></font><br>
-                            <img src="{{ asset('img/targeta.png')}}" alt=""
-                                 style="max-width: 125px; max-height: 125px;">
-                        </a>
-                    </div>
-                </div> 
+                <p>{{$curso->descripcion}}  </p>               
+                <h4><a href="{{$curso->link}}">Link web</a></h4>
+               
             </div>
         </div>
         
@@ -49,7 +20,7 @@
             <div style="width: 100%; margin: 20px auto;">
                 <span style="float: left; margin-right: 15px;">
                     <i class="fa fa-clock-o fa-3x"></i>
-                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Longitud: {{$curso->longitud}} horas</font></p></h3>
+                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Longitud: </font></p></h3>
                 </span>
             </div>
         </li>
@@ -66,8 +37,8 @@
             <div style="width: 100%; margin: 20px auto;">
                 <span style="float: left; margin-right: 15px;">
                     <i class="fa fa-sitemap fa-3x"></i>
-                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Nivel: {{$curso->nivel}}
-                    </font></p></h3>
+                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Nivel:
+                        {{$curso->costo}}</font></p></h3>
                 </span>
             </div>
         </li>

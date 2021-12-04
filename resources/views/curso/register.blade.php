@@ -29,6 +29,24 @@
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descipcion:</font></font></label>    
                   <input  class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">    
+            </div>  
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longtud:</font></font></label>    
+                  <input type="number" min="1" pattern="^[0-9]+" class="form-control" id="longitud" name="longitud" placeholder="Longitud horas">    
+            </div> 
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nivel:</font></font></label>    
+               <select class="form-control" id="nivel" name="nivel" placeholder="Nivel">
+                 <option>Seleccione</option>
+                 <option value="Basico">Basico</option>
+                 <option value="Intermedio">Intermedio</option>
+                 <option Value="Avanzado">Avanzado</option>
+               </select>   
+              
+            </div> 
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Link:</font></font></label>     
+              <input  class="form-control" id="link" name="link" placeholder="Link web">    
             </div>             
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha:</font></font></label>
@@ -37,7 +55,7 @@
             </div>
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Costo:</font></font></label>    
-                  <input type=" " class="form-control" id="costo" name="costo" placeholder="Costo $">    
+                  <input  class="form-control" id="costo" name="costo" placeholder="Costo $" type="number" min="1" pattern="^[0-9]+">    
             </div>
          
           </div>

@@ -40,6 +40,9 @@ Route::get('principallearning/{id}',[InicioController::class,'learning'])->name(
 Route::get('regcurso/{id}',[InicioController::class,'registrocurso']) 
 ->name('principal.regcurso');
 
+Route::get('infocurso/{id}',[InicioController::class,'infocurso']) 
+->name('principal.infocurso');
+
 Route::get('dash',[AdminController::class,'dashboard'])
 ->name('admin.index');
 

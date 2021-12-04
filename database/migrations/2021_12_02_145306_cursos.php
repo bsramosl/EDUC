@@ -13,10 +13,14 @@ class Cursos extends Migration
      */
     public function up()
     {
+
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->text('descripcion');
+            $table->integer('longitud');
+            $table->string('nivel');
+            $table->string('link')->nullable();
             $table->date('fecha');
             $table->double('costo');            
             $table->timestamps();

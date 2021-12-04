@@ -20,13 +20,8 @@
     <h3>{{$pag->curso->nombre}}</h3>
     <h6>{{$pag->curso->fecha}}</h6>
     <p>{{$pag->curso->descripcion}}</p>
-    <div class="buttons">
-      <button class="primary">
-        Message
-      </button>
-      <button class="primary">
-        Following
-      </button>
+    <div class="buttons"> 
+	  <a href="{{ route('principal.infocurso',$pag->curso->id) }}" class="btn btn-primary btn-sm btn-course">Entrar</a>       
     </div>
     <div class="skills">        
     </div>

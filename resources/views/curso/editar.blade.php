@@ -29,11 +29,27 @@
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Descipcion:</font></font></label>    
                   <input class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" value="{{$curso->descripcion}}">    
-            </div>             
+            </div>
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longtud:</font></font></label>    
+                  <input type="number" min="1" pattern="^[0-9]+" class="form-control" id="longitud" name="longitud" placeholder="Longitud horas" value="{{$curso->longitud}}">    
+            </div> 
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nivel:</font></font></label>    
+               <select class="form-control" id="nivel" name="nivel" placeholder="Nivel">
+                 <option>Seleccione</option>
+                 <option value="Basico">Basico</option>
+                 <option value="Intermedio">Intermedio</option>
+                 <option Value="Avanzado">Avanzado</option>
+               </select>                
+            </div> 
+            <div class="form-group">
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Link:</font></font></label>     
+              <input  class="form-control" id="link" name="link" placeholder="Link web" value="{{$curso->link}}">                 
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha:</font></font></label>
               <div class="input-group date"  >
-                <input type="date" class="form-control"  id="fecha" name="fecha" value="{{$curso->fecha}}}">               
+                <input type="date" class="form-control"  id="fecha" name="fecha" value="{{$curso->fecha}}">               
             </div>
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Costo:</font></font></label>    

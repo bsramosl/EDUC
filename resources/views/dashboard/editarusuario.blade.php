@@ -38,7 +38,11 @@
               </div>
             </div>  
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Rol" id="role" name="role" value="{{$usuario->role}}">
+            <select  type="text" class="form-control" placeholder="Rol" id="role" name="role" value="{{$usuario->role}}">
+                 <option>Seleccione</option>
+                 <option value="Admin">Admin</option>
+                 <option value="Profesor">Profesor</option>
+               </select>                
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-user"></span>
@@ -61,4 +65,9 @@
     <!-- /.container-fluid -->
   </section>
   <!-- /.content --> 
+@if(session('usuarioModificado'))
+{{session('usuarioModificado')}}
+@endif
+
+
 @endsection

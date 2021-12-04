@@ -18,7 +18,7 @@
       <h3 id="pago">Hacer un pago con tarjeta de débito o crédito</h3>     
       <br>
             <div class="input-group mb-3">
-                <input type="text" class="form-control form-control-lg" autocomplete="cc-name" placeholder="N.º de la tajeta" pattern="[0-9]*"  >
+                <input type="number" min="1" pattern="^[0-9]+" class="form-control form-control-lg" autocomplete="cc-name" placeholder="N.º de la tajeta" >
                 <div class="input-group-append">
                   <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
                 </div>

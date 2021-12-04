@@ -47,4 +47,11 @@ class InicioController extends Controller
         return view('principal.learning',$data);   
 
     }
+
+    public function infocurso($id){
+        $data['curso'] = Curso::find($id);;
+        return view('principal.infocurso',$data);
+    }
+
+
 }
