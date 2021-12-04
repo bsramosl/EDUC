@@ -40,7 +40,7 @@ class CursoController extends Controller
     public function editcurso($id){
        $datosCurso = request()->except((['_token','_method']));
        Curso::where('id','=',$id)->update($datosCurso);
-       return back()->with('cursomodificado','Curso modificado');
+       return back()->with('cursoguardado','Curso modificado');
  
     }
 }

@@ -65,8 +65,19 @@
     <!-- /.container-fluid -->
   </section>
   <!-- /.content --> 
+
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
+
 @if(session('usuarioModificado'))
-{{session('usuarioModificado')}}
+<script>  
+  Swal.fire({
+              icon: 'success',
+              title: ' ',
+              html: '{{session('usuarioModificado')}}',
+          });
+</script>  
+
 @endif
 
 

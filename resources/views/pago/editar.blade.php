@@ -72,5 +72,20 @@
 @endif
 
 
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
+
+@if(session('pagoguardado'))
+<script>  
+  Swal.fire({
+              icon: 'success',
+              title: ' ',
+              html: '{{session('pagoguardado')}}',
+          });
+</script>  
+
+@endif
+
+
 
   @endsection

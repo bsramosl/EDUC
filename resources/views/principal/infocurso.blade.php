@@ -20,7 +20,7 @@
             <div style="width: 100%; margin: 20px auto;">
                 <span style="float: left; margin-right: 15px;">
                     <i class="fa fa-clock-o fa-3x"></i>
-                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Longitud: </font></p></h3>
+                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Longitud: {{$curso->longitud}} horas</font></p></h3>
                 </span>
             </div>
         </li>
@@ -38,7 +38,7 @@
                 <span style="float: left; margin-right: 15px;">
                     <i class="fa fa-sitemap fa-3x"></i>
                     <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Nivel:
-                        {{$curso->costo}}</font></p></h3>
+                        {{$curso->nivel}}</font></p></h3>
                 </span>
             </div>
         </li>

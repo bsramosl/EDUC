@@ -23,6 +23,9 @@
             <tr> 
                 <th><i class="fa "></i> Nombre</th>
                 <th><i class="fa "></i> Descripcion</th>   
+                <th><i class="fa "></i> Longitud</th>
+                <th><i class="fa "></i> Nivel</th>
+                <th><i class="fa "></i> Link</th>
                 <th><i class="fa "></i> Fecha</th>   
                 <th><i class="fa "></i> Costo</th>  
                 <th><i class="fa "></i> Opciones</th>     
@@ -33,6 +36,9 @@
                 <tr>
                     <td>{{$cur->nombre}}</td>
                     <td>{{$cur->descripcion}}</td>
+                    <td>{{$cur->longitud}}</td>
+                    <td>{{$cur->nivel}}</td>
+                    <td>{{$cur->link}}</td>
                     <td>{{$cur->fecha}}</td>   
                     <td>{{$cur->costo}}</td>                      
 

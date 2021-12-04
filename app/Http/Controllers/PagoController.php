@@ -43,6 +43,6 @@ class PagoController extends Controller
     public function editpago($id){
        $datosPago = request()->except((['_token','_method']));
        Pago::where('id','=',$id)->update($datosPago);
-       return back()->with('pagomodificado','Pago modificado');
+       return back()->with('pagoguardado','Pago modificado');
     }
 }
