@@ -74,9 +74,9 @@
 							@if (auth()->check())
 							<li><a href="{{ route('principal.curso',auth()->user()->id)}}">Cursos</a></li>							
 							<li><a href="{{ route('principal.learning',auth()->user()->id)}}">Learninig</a></li>
+							<li><a href="{{route('principal.profesor')}}">Maestro</a></li>
 							<li><a href="{{route('principal.contacto')}}">Contacto</a></li>
-							<li class="has-dropdown">
-                             
+							<li class="has-dropdown">                             
 								<a>{{ Auth::user()->name }}</a>
 								<ul class="dropdown">
 									<li><a href="{{route('principal.perfil',auth()->user()->id)}}" style="font-size: large">Perfil</a></li>
@@ -95,6 +95,7 @@
                               </li>					
 							@else
 							<li><a href="{{route('principal.cursos')}}">Cursos</a></li>
+							<li><a href="{{route('principal.profesor')}}">Maestro</a></li>
 							<li><a href="{{route('principal.contacto')}}">Contacto</a></li>
 							<li class="btn-cta"><a href="{{ route('login') }}"><span>Acceso</span></a></li>
 							<li class="btn-cta"><a href="{{ route('register') }}"><span>Registro</span></a></li>															
