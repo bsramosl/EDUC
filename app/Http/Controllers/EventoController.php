@@ -10,7 +10,8 @@ class EventoController extends Controller
 {
 
     public function index(){
-        return view('principal.evento');
+        $data['evento'] = Evento::all();
+        return view('principal.evento',$data);
     }
 
 

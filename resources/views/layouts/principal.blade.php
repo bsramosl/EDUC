@@ -95,6 +95,7 @@
                               </li>					
 							@else
 							<li><a href="{{route('principal.cursos')}}">Cursos</a></li>
+							<li><a href="{{route('principal.evento')}}">Evento</a></li>			
 							<li><a href="{{route('principal.contacto')}}">Contacto</a></li>
 							<li class="btn-cta"><a href="{{ route('login') }}"><span>Acceso</span></a></li>
 							<li class="btn-cta"><a href="{{ route('register') }}"><span>Registro</span></a></li>															

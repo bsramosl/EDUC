@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 
-@section('title','Cursos') 
+@section('title','Perfil') 
 <link rel="stylesheet"  href="{{asset('css/adminlte.min.css')}}">
 
 @section('content')

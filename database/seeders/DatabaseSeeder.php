@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Curso;
+use App\Models\Evento;
 
 class DatabaseSeeder extends Seeder
 {
@@ -33,5 +34,14 @@ class DatabaseSeeder extends Seeder
         $curso->fecha = '2021/12/15';
         $curso->costo = '100';
         $curso->save();
+
+        $evento = new Evento;
+        $evento->nombre ='Masterclass de Escritura y Publicación de Libros -Passion2Published - Guayaquil';
+        $evento->descripcion ='Aprenda el mejor plan de publicación y redacción de libros para es';
+        $evento->localizacion ='En línea: en cualquier lugar con wifi rápido y sonido, Guayaquil Guayaquil Guayaquil, Provincia de Guayas. 90101';
+        $evento->imagen = 'evento.jpg';
+        $evento->fecha = '2021/12/15';
+        $evento->costo = '100';
+        $evento->save();
     }
 }
