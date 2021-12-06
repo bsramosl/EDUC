@@ -46,8 +46,8 @@ Route::get('infocurso/{id}',[InicioController::class,'infocurso'])
 Route::get('contacto',[InicioController::class,'contacto']) 
 ->name('principal.contacto');
 
-Route::get('profesor',[InicioController::class,'profesor']) 
-->name('principal.profesor');
+Route::get('evento',[EventoController::class,'index']) 
+->name('principal.evento');
 
 
 

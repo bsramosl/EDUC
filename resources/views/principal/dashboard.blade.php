@@ -62,12 +62,12 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{$maestro}}</h3>
 
-                <p>Visitantes</p>
+                <p>Maestros</p>
               </div>
               <div class="icon">
-                <i class="fa fa-users"></i>
+                <i class="fa fa-male"></i>
               </div>
               <a href="#" class="small-box-footer">Ma informacion <i class="fas fa-arrow-circle-right"></i></a>
             </div>

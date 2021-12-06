@@ -56,10 +56,6 @@ class InicioController extends Controller
     public function contacto(){
         return view('principal.contacto');
     }
-
-    public function profesor(){
-        return view('principal.profesor');
-    }
-
+ 
 
 }

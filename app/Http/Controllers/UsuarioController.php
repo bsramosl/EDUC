@@ -23,8 +23,16 @@ class UsuarioController extends Controller
         return view('dashboard.editarusuario',compact('usuario'));
     }
 
-    public function editarusus($id){
-       $datosUsuario = request()->except((['_token','_method']));
+    public function editarusus(Request $request,$id){
+        $datosUsuario = request()->except((['_token','_method'])); 
+
+        if($request->hasfile('imagen')){
+            $imagen = $request->file('imagen');
+            $nombre = $id.'.'.$imagen->getClientOriginalName();
+            $destino = public_path('img/usuario');
+            $request->imagen->move($destino,$nombre);
+            $datosUsuario['imagen']=$nombre; 
+        }              
        User::where('id','=',$id)->update($datosUsuario);
        return back()->with('usuarioModificado','Usuario modificado');
     }

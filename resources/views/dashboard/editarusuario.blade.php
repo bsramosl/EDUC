@@ -41,7 +41,7 @@
             <select  type="text" class="form-control" placeholder="Rol" id="role" name="role" value="{{$usuario->role}}">
                  <option>Seleccione</option>
                  <option value="Admin">Admin</option>
-                 <option value="Profesor">Profesor</option>
+                 <option value="Profesor">Usuario</option>
                </select>                
               <div class="input-group-append">
                 <div class="input-group-text">

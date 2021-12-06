@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Curso;
 class CursoController extends Controller
 {
+ 
     public function listar(){
         $data['curso'] = Curso::paginate(10);
         return view('curso.listar',$data);

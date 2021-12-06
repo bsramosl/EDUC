@@ -8,6 +8,12 @@ use App\Models\Evento;
 
 class EventoController extends Controller
 {
+
+    public function index(){
+        return view('principal.evento');
+    }
+
+
     public function listar(){
         $data['evento'] = Evento::paginate(10);
         return view('evento.listar',$data);

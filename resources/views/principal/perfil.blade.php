@@ -13,7 +13,13 @@
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">  
             <div class="text-center">
-              <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/user.png')}}" alt="Foto de perfil de usuario">
+            @if ( $usuario->imagen  != ' ')
+            <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/usuario').'/'. $usuario->imagen}}" alt="Foto de perfil de usuario">
+            @else
+            <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/user.png')}}" alt="Foto de perfil de usuario">
+
+            @endif
+              
             </div>
 
             <h3 class="profile-username text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ auth()->user()->name}}</font></font></h3>
@@ -69,36 +75,42 @@
                 </div>              
               </div>
               <div class="tab-pane" id="settings">
-                <form class="form-horizontal" action="{{route('usuario.edit',$usuario->id)}}" method="post">
-                    @csrf  @method('PATCH')  
+                <form class="form-horizontal" action="{{route('usuario.edit',$usuario->id)}}" method="post" enctype="multipart/form-data">
+                    @csrf  @method('PATCH') 
                       <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-                      <input   class="form-control" id="name" name="name" placeholder="Nombre" value="{{$usuario->name}}">
+                      <input   class="form-control"  name="name" placeholder="Nombre" value="{{$usuario->name}}">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{$usuario->email}}">
+                      <input type="email" class="form-control" name="email" placeholder="Email" value="{{$usuario->email}}">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputName2" class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" value="{{$usuario->titulo}}">
+                      <input type="text" class="form-control" name="titulo" placeholder="Titulo" value="{{$usuario->titulo}}">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputExperience" class="col-sm-2 col-form-label">Habilidades</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="educacion" name="educacion" placeholder="Educacion" value="{{$usuario->habilidades}}">
+                        <input type="text" class="form-control" name="habilidades" placeholder="Habilidades" value="{{$usuario->habilidades}}">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputSkills" class="col-sm-2 col-form-label">Educacion</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="educacion" name="educacion" placeholder="Educacion" value="{{$usuario->educacion}}">
+                      <input type="text" class="form-control" name="educacion" placeholder="Educacion" value="{{$usuario->educacion}}">
+                    </div>
+                  </div> 
+                  <div class="form-group row">
+                    <label for="inputSkills" class="col-sm-2 col-form-label">Imagen</label>
+                    <div class="col-sm-10">
+                      <input type="file" class="form-control" name="imagen" placeholder="Imagen" value="{{$usuario->educacion}}">
                     </div>
                   </div> 
                   <div class="form-group row">
@@ -120,6 +132,19 @@
     <!-- /.row -->
   </div>
  
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
+
+@if(session('usuarioModificado'))
+<script>  
+  Swal.fire({
+              icon: 'success',
+              title: ' ',
+              html: '{{session('usuarioModificado')}}',
+          });
+</script>  
+
+@endif
  
 @endsection
 
