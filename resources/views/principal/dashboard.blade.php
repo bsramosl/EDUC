@@ -62,7 +62,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{$maestro}}</h3>
+                <h3> </h3>
 
                 <p>Maestros</p>
               </div>

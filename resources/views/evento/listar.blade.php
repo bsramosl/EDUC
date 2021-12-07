@@ -1,6 +1,6 @@
 @extends('layouts.plantillabase')
 
-@section('title','Cursos')
+@section('title','Evento')
 
 @section('usuario')
 

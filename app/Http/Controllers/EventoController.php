@@ -31,13 +31,20 @@ class EventoController extends Controller
 
     public function save(Request $request){
         $validator = $this->validate($request,[
-            'nombre'=>'required|string|max255',
-            'descripcion'=>'required|string|max255',
-            'fecha'=>'required|date',             
+            'nombre'=>'required|string',
+            'descripcion'=>'required|string',
+            'fecha'=>'required|date',              
         ]);
         $eventodata = request()->except('_token');
+        if($request->hasfile('imagen')){
+            $imagen = $request->file('imagen');
+            $nombre = 'evento'.'.'.$imagen->getClientOriginalName();
+            $destino = public_path('img/evento');
+            $request->imagen->move($destino,$nombre);
+            $eventodata['imagen']=$nombre; 
+        }     
         Evento::insert($eventodata);
-        return 'Evento guardado';
+        return back()->with('Eventoguardado','Evento Guardado');
     }
 
     public function editarevento($id){
@@ -48,6 +55,11 @@ class EventoController extends Controller
     public function editevento($id){
        $datosEvento = request()->except((['_token','_method']));
        Evento::where('id','=',$id)->update($datosEvento);
-       return back()->with('Eventomodificado','Evento modificado');
+       return back()->with('Eventoguardado','Evento modificado');
     }
+
+    public function regevento($id){
+        $data['evento'] = Evento::find($id);;
+        return view('principal.registrarevento',$data);
+     }
 }

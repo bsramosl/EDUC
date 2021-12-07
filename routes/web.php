@@ -49,6 +49,9 @@ Route::get('contacto',[InicioController::class,'contacto'])
 Route::get('evento',[EventoController::class,'index']) 
 ->name('principal.evento');
 
+Route::get('regevento/{id}',[EventoController::class,'regevento']) 
+->name('principal.regevento');
+
 
 
 Route::get('dash',[AdminController::class,'dashboard'])

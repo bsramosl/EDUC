@@ -50,7 +50,7 @@
             <input type="hidden" class="form-control"  id="fecha" name="fecha" value="<?php echo date("Y-m-d");?>">  
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pago:</font></font></label>    
-                  <input type=" " class="form-control" id="costo" name="pago" placeholder="pago $">    
+                  <input  class="form-control" id="costo" name="pago" placeholder="pago $" value="{{$cur->costo}}" readonly>    
             </div>         
           </div>
           <div class="card-footer">

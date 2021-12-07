@@ -31,7 +31,7 @@
                   <input  class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">    
             </div>  
             <div class="form-group">
-              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longtud:</font></font></label>    
+              <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Longitud:</font></font></label>    
                   <input type="number" min="1" pattern="^[0-9]+" class="form-control" id="longitud" name="longitud" placeholder="Longitud horas">    
             </div> 
             <div class="form-group">

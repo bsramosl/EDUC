@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $user = new User;
         $user->name ='Admin';
         $user->email ='admin@admin.com';
-        $user->password ='1234';
+        $user->password ='$2y$10$e6sGSipIYqDU3clgBbayoucPvB5El4ZQ6Ma0BzJKbWzwSquVf.FY.';
         $user->role = 'admin';
         $user->titulo = 'Ingeniero de sistemas';
         $user->habilidades = 'Diseño de UI Codificación Javascript PHP Node.js';
