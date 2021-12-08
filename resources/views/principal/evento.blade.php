@@ -9,10 +9,7 @@
     <h1 class=" ">Estoy aprendiendo</h1>
 
 
-    <div class="row"> 
- 
- 
-
+    <div class="row">  
         <h3 class="ciscolanding-header">Eventos</h3>  
                 @if ($evento != null )
                 @foreach ($evento as $even) 
