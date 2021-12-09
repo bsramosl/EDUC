@@ -11,7 +11,7 @@
 				<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$evento->nombre}}</font></font></h2>
 				<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$evento->descripcion}}</font></font></p>
 				<div class="col-sm-6">
-                                        <button type="submit" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal-lg"> Registro</button>
+                <button type="submit" onclick="modalregistro();" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal-lg"> Registro</button>
 										  
                 </div>
 			</div>
@@ -51,9 +51,39 @@
 											<button type="button" class="btn btn-primary" id="registro" onclick="register();">Registrar</button>
 											@endif 
 										</div>
+
 										<div class="col-md-12"  style="padding-top: 20px;" id="registrar">
-											Test textddddd
+											<div class="row">
+												<div class="col-sm-6"> 
+												  <div class="form-group">
+													  <input type="text" class="form-control form-control-lg" placeholder="Nombres" name="nombre"
+													   autocomplete="given-name">
+												  </div>
+												</div>
+												<div class="col-sm-6">
+												  <div class="form-group">
+													 <input type="text" class="form-control form-control-lg" placeholder="Apellidos" name="apellidos"
+													 autocomplete="family-name">
+												  </div>                  
+												</div> 
+											  </div> 
+											  <div class="row">
+												<div class="col-sm-6"> 
+												  <div class="form-group">
+													  <input type="text" class="form-control form-control-lg" name="email" placeholder="Direccion de correo electronico"
+													   autocomplete="email">
+												  </div>
+												</div>
+												<div class="col-sm-6">
+												  <div class="form-group">
+													 <input type="text" class="form-control form-control-lg" placeholder="Confirmar correo electronico" 
+													 autocomplete="family-name">
+												  </div>                  
+												</div> 
+											  </div> 																			 
+												<button type="button" class="btn btn-primary" id="regis"  >Registrar</button>
 										</div>
+										
 																				
 									</div>
 									<div class="box2 col-md-5">
@@ -102,10 +132,15 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<script>
-		document.getElementById('registrar').style.display = 'none';
+	 
 		function register(){
 			document.getElementById('registrar').style.display = 'block';
 			document.getElementById('registro').style.display = 'none';
+		}
+
+		function modalregistro(){
+			document.getElementById('registrar').style.display = 'none';
+			document.getElementById('registro').style.display = 'block';
 		}
 	
 	</script>
