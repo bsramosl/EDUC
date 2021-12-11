@@ -85,10 +85,10 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input  name="user_id" id="user_id" value="{{auth()->user()->id}}">
-                                            <input  name="curso_id" id="curso_id" value="{{ $curso->id}}">
-                                            <input  name="fecha" id="fecha" value="<?php echo date("Y-m-d\TH-i");?>">
-                                            <input  name="pago" id="pago" value="{{$curso->costo}}">
+                                            <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}">
+                                            <input type="hidden" name="curso_id" id="curso_id" value="{{ $curso->id}}">
+                                            <input type="hidden" name="fecha" id="fecha" value="<?php echo date("Y-m-d\TH-i");?>">
+                                            <input type="hidden" name="pago" id="pago" value="{{$curso->costo}}">
                                         </div>
                                     </div>                                     
                                 </div> 
