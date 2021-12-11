@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evento extends Model
 {
-    use HasFactory;
+    public function pagoeventos(){
+        return $this->hasmany('App\Models\PagoEvento');
+    }
 }

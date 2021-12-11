@@ -56,33 +56,19 @@
 											<div class="row">
 												<div class="col-sm-6"> 
 												  <div class="form-group">
-													  <input type="text" class="form-control form-control-lg" placeholder="Nombres" name="nombre"
+													  <input type="text" class="form-control form-control-lg" placeholder="Nombre completo" name="nombre"
 													   autocomplete="given-name">
 												  </div>
-												</div>
-												<div class="col-sm-6">
-												  <div class="form-group">
-													 <input type="text" class="form-control form-control-lg" placeholder="Apellidos" name="apellidos"
-													 autocomplete="family-name">
-												  </div>                  
 												</div> 
-											  </div> 
-											  <div class="row">
 												<div class="col-sm-6"> 
-												  <div class="form-group">
-													  <input type="text" class="form-control form-control-lg" name="email" placeholder="Direccion de correo electronico"
-													   autocomplete="email">
+													<div class="form-group">
+														<input type="text" class="form-control form-control-lg" name="email" placeholder="Direccion de correo electronico"
+														 autocomplete="email">
+													</div>
 												  </div>
-												</div>
-												<div class="col-sm-6">
-												  <div class="form-group">
-													 <input type="text" class="form-control form-control-lg" placeholder="Confirmar correo electronico" 
-													 autocomplete="family-name">
-												  </div>                  
-												</div> 
-											  </div> 																			 
+											  </div> 											   																			 
 												<button type="button" class="btn btn-primary" id="regis"  >Registrar</button>
-										</div>
+										    </div>
 										
 																				
 									</div>
