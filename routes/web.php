@@ -52,6 +52,9 @@ Route::get('evento',[EventoController::class,'index'])
 Route::get('regevento/{id}',[EventoController::class,'regevento']) 
 ->name('principal.regevento');
 
+Route::get('/paypal/{orderId}',[PagoController::class,'proceso'])
+->name('principal.paypal');
+
 
 
 Route::get('dash',[AdminController::class,'dashboard'])
