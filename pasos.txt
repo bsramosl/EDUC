@@ -3,5 +3,5 @@
 
 
 
-
+composer require paypal/rest-api-sdk-php
 composer require guzzlehttp/guzzle:^7.0
