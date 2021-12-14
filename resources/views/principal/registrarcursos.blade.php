@@ -206,7 +206,7 @@
           },
         purchase_units: [{
           amount: {
-            value: '{{$curso->costo}}' 
+            value: '{{$evento->costo}' 
           }
         }]
       });

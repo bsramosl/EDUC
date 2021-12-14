@@ -7,7 +7,6 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PaypalContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +51,7 @@ Route::get('evento',[EventoController::class,'index'])
 
 Route::get('regevento/{id}',[EventoController::class,'regevento']) 
 ->name('principal.regevento');
-
-Route::get('/paypal/{orderId}',[PaypalContoller::class,'proceso'])
-->name('principal.paypal');
+ 
 
 
 
