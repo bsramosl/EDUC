@@ -274,24 +274,19 @@
         </div>
     </div>
     <div class="row row-padded-mb">
-    @foreach($evento as $even)
-        <div class="col-md-4 animate-box">
-            <div class="fh5co-event">
-                <div class="date text-center"><span>{{$even->fecha}}<br>  </span></div>
-                <h3><a href="#">{{$even->nombre}}</a></h3>
-                <p>{{$even->descripcion}}</p>
-                <p><a href="#">Read More</a></p>
-            </div>
-        </div>	
-        @endforeach			 
-        <div class="col-md-4 animate-box">
-            <div class="fh5co-event">
-                <div class="date text-center"><span>15<br>Mar.</span></div>
-                <h3><a href="#">New Device Develope by Microsoft</a></h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <p><a href="#">Read More</a></p>
-            </div>
+    @foreach($evento as $even)  
+    @if (date("Y-m-d") > $even->fecha) 
+    @else
+    <div class="col-md-4 animate-box">
+        <div class="fh5co-event">
+            <div class="date text-center"><span>{{$even->fecha}}<br>  </span></div>
+            <h3><a href="#">{{$even->nombre}}</a></h3>
+            <p>{{$even->descripcion}}</p>
+            <p><a href="#">Read More</a></p>
         </div>
+    </div>	        
+    @endif   
+        @endforeach			 
     </div>
 </div>
 </div> 

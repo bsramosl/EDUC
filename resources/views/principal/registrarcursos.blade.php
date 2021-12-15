@@ -190,7 +190,7 @@
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
 
 <script>
-    paypal.Buttons({
+     paypal.Buttons({
     createOrder: function(data, actions) {
       // This function sets up the details of the transaction, including the amount and line item details.
       return actions.order.create({
@@ -202,11 +202,14 @@
               name:{
                   given_name:'John',
                   surname:'Doe'
+              },
+              addres:{
+
               }
           },
         purchase_units: [{
           amount: {
-            value: '{{$evento->costo}' 
+            value:'{{$curso->costo}}'
           }
         }]
       });
@@ -216,6 +219,7 @@
       return actions.order.capture().then(function(details) {
         // This function shows a transaction success message to your buyer.
         alert('Transaction completed by ' + details.payer.name.given_name);
+        document.getElementById('paypal-button-container').style.display = 'none';        
       });
     }
   }).render('#paypal-button-container');

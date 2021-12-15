@@ -136,7 +136,7 @@
                         <li class="nav-item">
                           <a href="{{ route('pago.listar') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Pagos</p>
+                            <p>Curso Pagos</p>
                           </a>
                         </li>
                       </ul>

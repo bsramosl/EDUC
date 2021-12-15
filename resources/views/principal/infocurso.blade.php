@@ -24,15 +24,7 @@
                 </span>
             </div>
         </li>
-        <li>
-            <div style="width: 100%; margin: 20px auto;">
-                <span style="float: left; margin-right: 15px;">
-                    <i class="fa fa-money fa-3x"></i>
-                    <h3 style="float: right; margin: 10px;" ;><p href="#"><font style="vertical-align: middle;">Costo:
-                        {{$curso->costo}}</font></p></h3>
-                </span>
-            </div>
-        </li>
+        
         <li>
             <div style="width: 100%; margin: 20px auto;">
                 <span style="float: left; margin-right: 15px;">
