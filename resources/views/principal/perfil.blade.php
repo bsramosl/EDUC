@@ -13,10 +13,10 @@
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">  
             <div class="text-center">
-            @if ( $usuario->imagen  != ' ')
+            @if ( $usuario->imagen  != null)
             <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/usuario').'/'. $usuario->imagen}}" alt="Foto de perfil de usuario">
             @else
-            <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/user.png')}}" alt="Foto de perfil de usuario">
+            <img class="profile-user-img img-fluid img-circle" style="width: 100px; height: 100px;" src="{{ asset('img/usuario/user.png')}}" alt="Foto de perfil de usuario">
 
             @endif
               
@@ -70,8 +70,9 @@
               <div class="active tab-pane" id="activity">
                 <div class="col-md-6"> 
                     <h5 >{{$usuario->name}}</h5>
-                    <div>Educ. ID: 52600782</div>
-                    <div>Correo electrónico: {{$usuario->email}} </div>                  
+                    <div>Educ. ID: {{$usuario->id}}</div>
+                    <div>Correo electrónico: {{$usuario->email}} </div>            
+                    <div>Nombre: {{$usuario->name}} </div>            
                 </div>              
               </div>
               <div class="tab-pane" id="settings">

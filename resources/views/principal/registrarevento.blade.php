@@ -1,7 +1,7 @@
   
-        @extends('layouts.principal')
+@extends('layouts.principal')
 
-@section('title','Registro')
+@section('title','Eventos')
 
 @section('content')
 <div id="fh5co-about">

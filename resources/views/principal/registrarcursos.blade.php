@@ -16,6 +16,7 @@
                     <li>Familiarícese con Microsoft Windows y cómo trabajar con archivos y carpetas.</li>
                     <li>Identifique problemas comunes e implemente soluciones.</li>
                 </ul>
+                <!--
                 <div class="donation-options mobile-hidden">
                     <div>
                         <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">  
@@ -31,7 +32,7 @@
                                  style="max-width: 125px; max-height: 125px;">
                         </a>
                     </div>
-                </div> 
+                </div> -->
             </div>
             <div id="paypal-button-container"></div>
  
@@ -218,7 +219,11 @@
       // This function captures the funds from the transaction.
       return actions.order.capture().then(function(details) {
         // This function shows a transaction success message to your buyer.
-        alert('Transaction completed by ' + details.payer.name.given_name);
+        Swal.fire({
+              icon: 'success',
+              title: ' ',
+              html: 'Tansaccion completa '+ details.payer.name.given_name,
+          });
         document.getElementById('paypal-button-container').style.display = 'none';        
       });
     }

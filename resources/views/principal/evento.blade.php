@@ -6,16 +6,18 @@
 @section('content')
 
 <div class="container">
-    <h1 class=" ">Estoy aprendiendo</h1>
+    <h1 class=" ">Eventos populares</h1>
 
 
     <div class="row">  
         <h3 class="ciscolanding-header">Eventos</h3>  
                 @if ($evento != null )
                 @foreach ($evento as $even) 
+                @if (date("Y-m-d") > $even->fecha)                 
+                @else
                 <div class="col-md-4" style="flex:1;">
                     <div class="card-container">
-                        <h3>{{$even->nombre}}</h3>
+                        <h3 id="titulo">{{$even->nombre}}</h3>
                         <h6>{{$even->fecha}}</h6>
                         <p style=" max-width: 260px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{$even->descripcion}}</p>
                         <div class="buttons">
@@ -25,6 +27,7 @@
                         </div>
                     </div> 
                 </div>
+                @endif
                 @endforeach
                 @else
                 <h1>No existen eventos actualmente disponibles</h1>
@@ -34,6 +37,20 @@
 </div>
 
 <style>
+
+    #lateral {
+        max-width: 260px;			
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;}
+
+    #titulo{
+        width: 300px;			
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }  
+
     @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
     * {
