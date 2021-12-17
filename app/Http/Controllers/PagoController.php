@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Pago;
 use App\Models\User;
 use App\Models\Curso;
-
+ 
+ 
 
 
 class PagoController extends Controller
@@ -48,8 +49,29 @@ class PagoController extends Controller
        return back()->with('pagoguardado','Pago modificado');
     }
 
-    public function pago($Id){ 
-        return '123';
+    public function myPost()
+    {
+        return view('principal.index');
+    }
+      
+    public function submitPost(Request $request)
+    {
+        // We are collecting all data submitting via Ajax
+        $input = $request->all();
+      
+        /*
+          $post = new Post;
+          $post->name = $input['name'];
+          $post->description = $input['description'];
+          $post->status = $input['status'];
+          $post->save();
+        */
+     	
+        // Sending json response to client
+        return response()->json([
+            "status" => true,
+            "data" => $input
+        ]);
     }
   
 }

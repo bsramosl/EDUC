@@ -189,10 +189,37 @@
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 
-<script>
-     paypal.Buttons({
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function envio(){        
+            var name = 'bryan'; 
+            // processing ajax request    
+            $.ajax({
+                url: "{{ route('postSubmit') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    _token: '{{csrf_token()}}',
+                    name: name, 
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+
+    }
+     
+
+       
+    paypal.Buttons({        
     createOrder: function(data, actions) {
       // This function sets up the details of the transaction, including the amount and line item details.
       return actions.order.create({
@@ -218,12 +245,9 @@
     },
     onApprove: function(data, actions) {
       // This function captures the funds from the transaction.
-      return actions.order.capture().then(function(details) {
-        var url = "{{ route('principal.pag', ['Id' => 'temp']) }}";
-    //Aqui sustituyes la palabra temp por el valor de valorId
-        url = url.replace('temp', {{$curso->id}});
-        location.href = url;
-          
+      return actions.order.capture().then(function(details) { 
+          envio();
+
         // This function shows a transaction success message to your buyer.
         Swal.fire({
               icon: 'success',
