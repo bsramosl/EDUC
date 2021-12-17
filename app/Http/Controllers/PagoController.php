@@ -47,5 +47,9 @@ class PagoController extends Controller
        Pago::where('id','=',$id)->update($datosPago);
        return back()->with('pagoguardado','Pago modificado');
     }
+
+    public function pago($Id){ 
+        return '123';
+    }
   
 }

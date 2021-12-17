@@ -56,6 +56,11 @@ Route::get('paypal/{orderId}',[PagoController::class,'regevento'])
 ->name('principal.paypal');
  
 
+Route::post('pago/{Id}',[PagoController::class,'pago']) 
+->name('principal.pag');
+ 
+
+
 
 
 Route::get('dash',[AdminController::class,'dashboard'])

@@ -189,6 +189,7 @@
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
      paypal.Buttons({
@@ -218,6 +219,11 @@
     onApprove: function(data, actions) {
       // This function captures the funds from the transaction.
       return actions.order.capture().then(function(details) {
+        var url = "{{ route('principal.pag', ['Id' => 'temp']) }}";
+    //Aqui sustituyes la palabra temp por el valor de valorId
+        url = url.replace('temp', {{$curso->id}});
+        location.href = url;
+          
         // This function shows a transaction success message to your buyer.
         Swal.fire({
               icon: 'success',
