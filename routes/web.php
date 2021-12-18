@@ -115,7 +115,6 @@ Route::patch('eventoedit/{id}',[EventoController::class,'editevento'])->name('ev
 Route::get('pagoregister',[PagoController::class,'create'])
 ->name('pago.register'); 
 
-Route::post('pagosave',[PagoController::class,'save'])->name('pago.save'); 
 
 Route::get('listpago',[PagoController::class,'listar'])
 ->name('pago.listar'); 
