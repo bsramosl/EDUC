@@ -15,7 +15,7 @@ class Pagoevento extends Migration
     {
         Schema::create('pagoeventos', function (Blueprint $table) {
             $table->id();
-            $table->string('Usario');
+            $table->string('Usuario');
             $table->unsignedBigInteger('evento_id')->nullable();
             $table->foreign('evento_id')->references('id')->on('eventos')->onDelete('set null');
             $table->date('fecha');    
