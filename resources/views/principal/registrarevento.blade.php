@@ -16,7 +16,7 @@
                 </div>
 			</div>
 			<div class="col-md-6">
-				@if($evento->imagen  != ' ')
+				@if($evento->imagen  != null)
 				<img class="img-responsive" src="{{ asset('img/evento').'/'. $evento->imagen}}">
 				@else
 				<img class="img-responsive" src="{{ asset('img/evento/evento.2.jpg') }}">
@@ -43,41 +43,17 @@
 												<h4 style="text-align: center;">Sobre este evento</h4>	
 												<p>{{$evento->descripcion}}</p>
 											</div> 									 
-										<div class="col-md-12"  style="text-align: center; padding-top: 20px;" >
-											@if (auth()->check())
-											<button type="button" class="btn btn-primary">Finalizar Compra
-											</button>
-											@else
-											<button type="button" class="btn btn-primary" id="registro" onclick="register();">Registrar</button>
-											@endif 
-										</div>
-
-										<div class="col-md-12"  style="padding-top: 20px;" id="registrar">
-											<div class="row">
-												<div class="col-sm-6"> 
-												  <div class="form-group">
-													  <input type="text" class="form-control form-control-lg" placeholder="Nombre completo" name="nombre"
-													   autocomplete="given-name">
-												  </div>
-												</div> 
-												<div class="col-sm-6"> 
-													<div class="form-group">
-														<input type="text" class="form-control form-control-lg" name="email" placeholder="Direccion de correo electronico"
-														 autocomplete="email">
-													</div>
-												  </div>
-											  </div> 											   																			 
-												<button type="button" class="btn btn-primary" id="regis"  >Registrar</button>
-										    </div>
-										
+										<div class="col-md-12"  style="text-align: center; padding-top: 20px;" > 
+											<div id="paypal-button-container"></div>  
+										</div> 
 																				
 									</div>
 									<div class="box2 col-md-5">
 										<div >
-											@if($evento->imagen != ' ')
+											@if($evento->imagen != null)
 											<img class="img-responsive" src="{{ asset('img/evento').'/'. $evento->imagen}}"
 											style="max-width: 345px; max-height: 226px;display:block;
-											margin:auto;>">
+											margin:auto;">
 											@else
 											<img class="img-responsive" src="{{ asset('img/evento/evento.2.jpg') }}" style="max-width: 345px; max-height: 226px;display:block;
 											margin:auto;">
@@ -116,18 +92,75 @@
 			<!-- /.modal-content -->
 		</div>
 		<!-- /.modal-dialog -->
-	</div>
-	<script>
-	 
-		function register(){
-			document.getElementById('registrar').style.display = 'block';
-			document.getElementById('registro').style.display = 'none';
-		}
+	</div>  
+<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 
-		function modalregistro(){
-			document.getElementById('registrar').style.display = 'none';
-			document.getElementById('registro').style.display = 'block';
-		}
-	
-	</script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function envio(){        
+		console.log
+            
+            $.ajax({
+                url: "{{ route('postSubmit') }}",
+                type: 'POST',
+                dataType: "json",
+                data: {
+                    _token: '{{csrf_token()}}', 
+                    fecha: '<?php echo date("Y-m-d\TH-i");?>', 
+                    pago: '{{$evento->costo}}', 
+                },
+                success: function(data) {
+                    // log response into console
+                    console.log(data);
+                }
+            });
+
+    } 
+    paypal.Buttons({        
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+          application_context:{
+              shipping_preference: "NO_SHIPPING"
+          }, 
+          payer:{
+              email_address:'sb-447uc439097137@personal.example.com',
+              name:{
+                  given_name:'John',
+                  surname:'Doe'
+              },
+              addres:{
+
+              }
+          },
+        purchase_units: [{
+          amount: {
+            value:'{{$evento->costo}}'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) { 
+          envio(); 
+        Swal.fire({
+              icon: 'success',
+              title: ' ',
+              html: 'Tansaccion completa '+ details.payer.name.given_name,
+          });
+        document.getElementById('paypal-button-container').style.display = 'none';        
+      });
+    }
+  }).render('#paypal-button-container');
+  //This function displays Smart Payment Buttons on your web page.
+
+</script>
 @endsection

@@ -27,16 +27,7 @@ class PagoController extends Controller
         $curso=Curso::all();
         return view('pago.register',compact('user','curso'));
     }
-
-    public function save(Request $request){
-        $validator = $this->validate($request,[
-            'pago'=>'required'
-        ]);
-        $pagodata = request()->except('_token');
-        Pago::insert($pagodata);
-        return back()->with('pagoguardado','Pago guardado');
-    }
-
+ 
     public function editarpago($id){
         $pago = Pago::findOrFail($id);
         return view('pago.editar',compact('pago'));
@@ -56,21 +47,13 @@ class PagoController extends Controller
       
     public function submitPost(Request $request)
     {
-        // We are collecting all data submitting via Ajax
-        $input = $request->all();
-      
-        /*
-          $post = new Post;
-          $post->name = $input['name'];
-          $post->description = $input['description'];
-          $post->status = $input['status'];
-          $post->save();
-        */
-     	
+         
+        $pagodata = request()->except('_token');
+        Pago::insert($pagodata);
         // Sending json response to client
         return response()->json([
             "status" => true,
-            "data" => $input
+            "data" => $pagodata
         ]);
     }
   

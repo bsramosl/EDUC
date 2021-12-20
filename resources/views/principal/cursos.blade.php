@@ -62,6 +62,8 @@
 
         @if ($curso != ' ' )
         @foreach ($curso as $cur)
+        @if (date("Y-m-d") > $cur->fecha) 
+    @else
         <tr>
             <td>
             <div class="col-md-4">
@@ -78,7 +80,8 @@
 
 </div>
  </td>
-        </tr>            
+        </tr>       
+        @endif     
         @endforeach             
         @else
             <h1>No existen cursos actualmente disponibles</h1>      

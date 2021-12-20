@@ -74,90 +74,7 @@
     </div>
 </div> 
 
-        <div class="modal fade" id="modal-default">
-            <div class="modal-dialog modal-default">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="pago">Hacer un pago con tarjeta de débito o crédito</h4> 
-                    </div>
-                    <div class="modal-body"> 
-                        <form  action="{{ route('pago.save')}}" method="post">   
-                            @csrf  
-                        <div class="card">
-                            <div class="card-body login-card-body"> 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}">
-                                            <input type="hidden" name="curso_id" id="curso_id" value="{{ $curso->id}}">
-                                            <input type="hidden" name="fecha" id="fecha" value="<?php echo date("Y-m-d\TH-i");?>">
-                                            <input type="hidden" name="pago" id="pago" value="{{$curso->costo}}">
-                                        </div>
-                                    </div>                                     
-                                </div> 
-                                 
-                               
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg" autocomplete="cc-name"
-                                           placeholder="N.º de la tajeta" pattern="[0-9]*">
-                                        </div>
-                                    </div>                                     
-                                </div> 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg"
-                                                   placeholder="Vencimiento "
-                                                   autocomplete="cc-exp" mask="11/11">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg"
-                                                   placeholder="Codigo de Seguridad "
-                                                   autocomplete="cc-csc">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg"
-                                                   placeholder="Nombres "
-                                                   autocomplete="given-name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-lg"
-                                                   placeholder="Apellidos"
-                                                   autocomplete="family-name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-3">
-
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-info btn-block"> Aceptar</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- /.login-card-body -->
-                        </div>
-                        </form>
-                    </div> 
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-
+      
 <style>
     .donation-options, .sponsors {
         display: flex;
@@ -186,7 +103,6 @@
 @endif
 <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
@@ -199,15 +115,17 @@
     });
 
     function envio(){        
-            var name = 'bryan'; 
-            // processing ajax request    
+           // processing ajax request    
             $.ajax({
                 url: "{{ route('postSubmit') }}",
                 type: 'POST',
                 dataType: "json",
                 data: {
                     _token: '{{csrf_token()}}',
-                    name: name, 
+                    user_id:'{{auth()->user()->id}}', 
+                    curso_id:'{{ $curso->id}}', 
+                    fecha: '<?php echo date("Y-m-d\TH-i");?>', 
+                    pago: '{{$curso->costo}}', 
                 },
                 success: function(data) {
                     // log response into console
@@ -215,10 +133,7 @@
                 }
             });
 
-    }
-     
-
-       
+    } 
     paypal.Buttons({        
     createOrder: function(data, actions) {
       // This function sets up the details of the transaction, including the amount and line item details.
@@ -246,9 +161,7 @@
     onApprove: function(data, actions) {
       // This function captures the funds from the transaction.
       return actions.order.capture().then(function(details) { 
-          envio();
-
-        // This function shows a transaction success message to your buyer.
+          envio(); 
         Swal.fire({
               icon: 'success',
               title: ' ',
