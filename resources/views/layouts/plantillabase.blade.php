@@ -139,6 +139,12 @@
                             <p>Curso Pagos</p>
                           </a>
                         </li>
+                        <li class="nav-item">
+                          <a href="{{ route('pagoevento.listar') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Evento Pagos</p>
+                          </a>
+                        </li>
                       </ul>
                     </li>
 
@@ -183,9 +189,9 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a href="pages/mailbox/compose.html" class="nav-link">
+                          <a href="{{route('pagoevento.listar')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Pagos</p>
+                            <p>Evento</p>
                           </a>
                         </li> 
                       </ul>

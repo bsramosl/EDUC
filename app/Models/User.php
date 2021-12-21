@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function pagos(){
         return $this->hasmany('App\Models\Pago');
     }
+
+    public function pago_evento(){
+        return $this->hasmany('App\Models\PagoEvento');
+    }
 }

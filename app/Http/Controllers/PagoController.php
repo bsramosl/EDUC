@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pago;
 use App\Models\User;
 use App\Models\Curso;
+use App\Models\PagoEvento;
  
  
 
@@ -27,11 +28,7 @@ class PagoController extends Controller
         $curso=Curso::all();
         return view('pago.register',compact('user','curso'));
     }
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
     public function editarpago($id){
         $pago = Pago::findOrFail($id);
         return view('pago.editar',compact('pago'));
@@ -50,24 +47,40 @@ class PagoController extends Controller
     }
       
     public function submitPost(Request $request)
-    {
-<<<<<<< HEAD
-         
-        $pagodata = request()->except('_token');
-        Pago::insert($pagodata);
-        // Sending json response to client
-=======
+    {       
         $validator = $this->validate($request,[
             'pago'=>'required'
         ]); 
         $pagodata = request()->except('_token');
-        Pago::insert($pagodata); 
-        $input = $request->all(); 
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
+        Pago::insert($pagodata);     
+        return response()->json([
+            "status" => true,
+            "data" => $pagodata
+        ]);
+    }
+
+    public function myPosteve()
+    {
+        return view('principal.index');
+    }
+      
+    public function submitPosteve(Request $request)
+    {       
+        $validator = $this->validate($request,[
+            'pago'=>'required'
+        ]); 
+        $pagodata = request()->except('_token');
+        Pago::insert($pagodata);     
         return response()->json([
             "status" => true,
             "data" => $pagodata
         ]);
     }
   
+    public function listareven(){
+        $data['pago'] = PagoEvento::paginate(10);
+        return view('pagoevento.listar',$data);
+    }
+
+
 }

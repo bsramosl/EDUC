@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PagoEvento extends Model
 {
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
     
     public function evento(){
         return $this->belongsTo('App\Models\Evento');

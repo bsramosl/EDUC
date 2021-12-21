@@ -140,17 +140,14 @@
                 dataType: "json",
                 data: {
                     _token: '{{csrf_token()}}',
-<<<<<<< HEAD
                     user_id:'{{auth()->user()->id}}', 
                     curso_id:'{{ $curso->id}}', 
                     fecha: '<?php echo date("Y-m-d\TH-i");?>', 
                     pago: '{{$curso->costo}}', 
-=======
                     user_id: user_id, 
                     curso_id: curso_id, 
                     fecha: fecha, 
                     pago: pago, 
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
                 },
                 success: function(data) {                   
                     console.log(data);

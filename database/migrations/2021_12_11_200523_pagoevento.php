@@ -13,10 +13,11 @@ class Pagoevento extends Migration
      */
     public function up()
     {
-        Schema::create('pagoeventos', function (Blueprint $table) {
+        Schema::create('pago_eventos', function (Blueprint $table) {
             $table->id();
-            $table->string('Usuario');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('evento_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('evento_id')->references('id')->on('eventos')->onDelete('set null');
             $table->date('fecha');    
             $table->double('pago');                   

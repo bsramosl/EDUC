@@ -126,3 +126,16 @@ Route::get('pagoeditar/{id}',[PagoController::class,'editarpago'])
 ->name('pago.editar'); 
  
 Route::patch('pagoedit/{id}',[PagoController::class,'editpago'])->name('pago.edit'); 
+
+
+
+
+Route::get('listpagoeven',[PagoController::class,'listareven'])
+->name('pagoevento.listar'); 
+
+Route::delete('pagodelete/{id}',[PagoController::class,'delete'])
+->name('pago.delete'); 
+
+Route::get('pagoeditar/{id}',[PagoController::class,'editarpago'])
+->name('pago.editar'); 
+ 

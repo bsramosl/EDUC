@@ -11,7 +11,12 @@
 				<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$evento->nombre}}</font></font></h2>
 				<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$evento->descripcion}}</font></font></p>
 				<div class="col-sm-6">
-                <button type="submit" onclick="modalregistro();" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal-lg"> Registro</button>
+					@if (auth()->check())
+					<button type="submit"  class="btn btn-info btn-block" data-toggle="modal" data-target="#modal-lg"> Registro</button>						
+					@else
+					<a class="btn btn-info btn-block" href="{{ route('register') }}">Registro</a> 
+					@endif
+                
 										  
                 </div>
 			</div>
