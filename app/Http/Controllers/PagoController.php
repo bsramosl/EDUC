@@ -82,5 +82,10 @@ class PagoController extends Controller
         return view('pagoevento.listar',$data);
     }
 
+    public function evedelete($id){
+        PagoEvento::destroy($id);
+        return back()->with('Pago eliminado');
+    }
+
 
 }

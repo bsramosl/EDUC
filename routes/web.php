@@ -133,6 +133,9 @@ Route::patch('pagoedit/{id}',[PagoController::class,'editpago'])->name('pago.edi
 Route::get('listpagoeven',[PagoController::class,'listareven'])
 ->name('pagoevento.listar'); 
 
+Route::delete('evenpagodelete/{id}',[PagoController::class,'evedelete'])
+->name('pagoevento.delete'); 
+
 Route::delete('pagodelete/{id}',[PagoController::class,'delete'])
 ->name('pago.delete'); 
 

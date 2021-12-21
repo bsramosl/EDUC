@@ -36,7 +36,7 @@
                     <td>{{$pag->pago}}</td>                      
 
                         <td><!--<a type="button" class="btn btn-primary btn-xs" href="{{route('pago.editar',$pag->id )}}"><i class="fa fa-pencil"></i></a>-->
-                            <form action="{{route('pago.delete',$pag->id)}}" method="POST">
+                            <form action="{{route('pagoevento.delete',$pag->id)}}" method="POST">
                             @csrf @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Borrar el registro?');"><i class="fa fa-trash-o"></i></button> 
                         </form>                        
