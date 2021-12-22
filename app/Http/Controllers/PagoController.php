@@ -70,7 +70,7 @@ class PagoController extends Controller
             'pago'=>'required'
         ]); 
         $pagodata = request()->except('_token');
-        Pago::insert($pagodata);     
+        PagoEvento::insert($pagodata);     
         return response()->json([
             "status" => true,
             "data" => $pagodata
@@ -85,7 +85,5 @@ class PagoController extends Controller
     public function evedelete($id){
         PagoEvento::destroy($id);
         return back()->with('Pago eliminado');
-    }
-
-
+    } 
 }

@@ -73,13 +73,8 @@
 
     </div>
 </div> 
-<<<<<<< HEAD
 
       
-=======
- 
-
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
 <style>
     .donation-options, .sponsors {
         display: flex;
@@ -107,11 +102,7 @@
 @endforeach
 @endif
 <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
-<<<<<<< HEAD
 <!-- Bootstrap 4 -->
-=======
- 
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
 
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
@@ -122,18 +113,8 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
-<<<<<<< HEAD
-    function envio(){        
-           // processing ajax request    
-=======
+   
     function envio(){   
-            var user_id = '{{auth()->user()->id}}';
-            var curso_id = '{{ $curso->id}}';
-            var fecha = '<?php echo date("Y-m-d\TH-i");?>';
-            var pago = '{{$curso->costo}}'; 
-            // processing ajax request    
->>>>>>> 2262913b9ee39cec56018b1db2f92eb45b0bbc1e
             $.ajax({
                 url: "{{ route('postSubmit') }}",
                 type: 'POST',
@@ -143,11 +124,7 @@
                     user_id:'{{auth()->user()->id}}', 
                     curso_id:'{{ $curso->id}}', 
                     fecha: '<?php echo date("Y-m-d\TH-i");?>', 
-                    pago: '{{$curso->costo}}', 
-                    user_id: user_id, 
-                    curso_id: curso_id, 
-                    fecha: fecha, 
-                    pago: pago, 
+                    pago: '{{$curso->costo}}',
                 },
                 success: function(data) {                   
                     console.log(data);

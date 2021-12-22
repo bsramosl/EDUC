@@ -98,6 +98,9 @@
 		</div>
 		<!-- /.modal-dialog -->
 	</div>  
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}">
+
 <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
@@ -109,17 +112,20 @@
         }
     });
 
+
     function envio(){        
 		console.log
             
             $.ajax({
-                url: "{{ route('postSubmit') }}",
+                url: "{{ route('evepostSubmit') }}",
                 type: 'POST',
                 dataType: "json",
                 data: {
                     _token: '{{csrf_token()}}', 
                     fecha: '<?php echo date("Y-m-d\TH-i");?>', 
                     pago: '{{$evento->costo}}', 
+					user_id:'{{auth()->user()->id}}', 
+                    evento_id:'{{ $evento->id}}', 
                 },
                 success: function(data) {
                     // log response into console
@@ -161,7 +167,8 @@
               title: ' ',
               html: 'Tansaccion completa '+ details.payer.name.given_name,
           });
-        document.getElementById('paypal-button-container').style.display = 'none';        
+        document.getElementById('paypal-button-container').style.display = 'none';   
+		location.replace("{{ route('principal.learning',auth()->user()->id) }}");     
       });
     }
   }).render('#paypal-button-container');

@@ -57,6 +57,9 @@ Route::get('regevento/{id}',[EventoController::class,'regevento'])
 Route::get('add-post', [PagoController::class, 'myPost']);
 Route::post('submit-post', [PagoController::class, 'submitPost'])->name('postSubmit');
 
+Route::get('eve-post', [PagoController::class, 'myPosteve']);
+Route::post('eve-post', [PagoController::class, 'submitPosteve'])->name('evepostSubmit');
+
  
 
 
