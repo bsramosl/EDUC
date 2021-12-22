@@ -115,6 +115,13 @@ Route::get('eventoeditar/{id}',[EventoController::class,'editarevento'])
  
 Route::patch('eventoedit/{id}',[EventoController::class,'editevento'])->name('evento.edit'); 
 
+
+
+
+
+
+
+
 Route::get('pagoregister',[PagoController::class,'create'])
 ->name('pago.register'); 
 
