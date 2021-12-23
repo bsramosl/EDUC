@@ -189,7 +189,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a href="{{route('pagoevento.listar')}}" class="nav-link">
+                          <a href="{{route('admin.listar')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Evento</p>
                           </a>

@@ -15,4 +15,11 @@ class AdminController extends Controller
         $data['evento'] = Evento::count();
         return view('principal.dashboard',$data);
     }
+
+    public function listar(){
+        $data['evento'] = Evento::paginate(10);
+        return view('dashboard.visualizarevento',$data);
+    }
+  
+
 }

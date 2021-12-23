@@ -115,10 +115,8 @@ Route::get('eventoeditar/{id}',[EventoController::class,'editarevento'])
  
 Route::patch('eventoedit/{id}',[EventoController::class,'editevento'])->name('evento.edit'); 
 
-
-
-
-
+Route::get('listeven',[AdminController::class,'listar'])
+->name('admin.listar');
 
 
 
