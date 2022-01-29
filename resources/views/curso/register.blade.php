@@ -51,7 +51,7 @@
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fecha:</font></font></label>
               <div class="input-group date"  >
-                <input type="date" class="form-control"  id="fecha" name="fecha" value="2021/08/12">               
+                <input type="date" class="form-control"  id="fecha" name="fecha">               
             </div>
             <div class="form-group">
               <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Costo:</font></font></label>    

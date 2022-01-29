@@ -34,6 +34,14 @@ class PagoController extends Controller
         return view('pago.editar',compact('pago'));
     }
     
+    public function save(Request $request){
+        $validator = $this->validate($request,[
+            'pago'=>'required'
+        ]);
+        $pagodata = request()->except('_token');
+        Pago::insert($pagodata);
+        return back()->with('pagoguardado','Pago guardado');
+    }
 
     public function editpago($id){
        $datosPago = request()->except((['_token','_method']));

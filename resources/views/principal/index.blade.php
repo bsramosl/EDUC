@@ -158,50 +158,8 @@
     </div>
 </div>
 </div>
-
-<div id="fh5co-counter" class="fh5co-counters" style="background-image: url('{{ asset('img/img_bg_3.jpg')}}');" data-stellar-background-ratio="0.5">
-<div class="overlay"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <span class="icon"><i class="fa fa-globe"></i></span>
-                    <span class="fh5co-counter js-counter" data-from="0" data-to="3297" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="fh5co-counter-label">Foreign Followers</span>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <span class="icon"><i class="fa fa-group"></i></span>
-                    <span class="fh5co-counter js-counter" data-from="0" data-to="3700" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="fh5co-counter-label">Students Enrolled</span>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <span class="icon"><i class="fa fa-lightbulb"></i></span>
-                    <span class="fh5co-counter js-counter" data-from="0" data-to="5034" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="fh5co-counter-label">Classes Complete</span>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center animate-box">
-                    <span class="icon"><i class="fa fa-user"></i></span>
-                    <span class="fh5co-counter js-counter" data-from="0" data-to="1080" data-speed="5000" data-refresh-interval="50"></span>
-                    <span class="fh5co-counter-label">Certified Teachers</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<div id="fh5co-course">
-<div class="container">
-    <div class="row animate-box">
-        <div class="col-md-5 col-md-offset-3 text-center fh5co-heading">
-            <h2>Nuestros Cursos</h2>
-            <p>Nuestro programa de especialización impulsará tus competencias hasta el más alto nivel profesional, con la actualización en las últimas técnicas y planteamientos a nivel empresarial”</p>
-        </div>
-    </div>
-
-</div>
-</div>
+ 
+ 
 
 <style>
 #lateral {

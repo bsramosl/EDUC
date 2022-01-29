@@ -3,54 +3,8 @@
 @section('title','Cursos') 
 
 @section('content')
-
-<aside id="fh5co-hero">
-<div class="flexslider">
-    <ul class="slides">
-       <li style="background-image: url('{{ asset('img/img_bg_1.jpg')}}');">
-           <div class="overlay-gradient"></div>
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-8 col-md-offset-2 text-center slider-text">
-                       <div class="slider-text-inner">
-                           <h1>El gran objetivo de la educación no es el conocimiento, sino la acción</h1>									
-                            <p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </li>
-       <li style="background-image:url('{{ asset('img/img_bg_2.jpg')}}');">
-           <div class="overlay-gradient"></div>
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-8 col-md-offset-2 text-center slider-text">
-                       <div class="slider-text-inner">
-                           <h1>Las raíces de la educación son amargas, pero el fruto es dulce</h1>									 
-                            <p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </li>
-       <li style="background-image: url('{{ asset('img/img_bg_5.jpg')}}');" >
-           <div class="overlay-gradient"></div>
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-8 col-md-offset-2 text-center slider-text">
-                       <div class="slider-text-inner">
-                           <h1>Te ayudamos a aprender cosas nuevas</h1>								
-                            <p><a class="btn btn-primary btn-lg btn-learn" href="#">Start Learning Now!</a></p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </li>		   	
-      </ul>
-  </div>
-</aside> 
-
-<div id="fh5co-course">
+ 
+<div id="">
 <div class="container">
     <div class="row animate-box">
         <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
