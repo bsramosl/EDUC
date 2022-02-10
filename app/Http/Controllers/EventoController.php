@@ -62,4 +62,8 @@ class EventoController extends Controller
         $data['evento'] = Evento::find($id);;
         return view('principal.registrarevento',$data);
      }
+
+
+     
+
 }

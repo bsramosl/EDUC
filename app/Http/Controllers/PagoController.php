@@ -23,11 +23,7 @@ class PagoController extends Controller
         return back()->with('Pago eliminado');
     }
 
-    public function create(){
-        $user=User::all();
-        $curso=Curso::all();
-        return view('pago.register',compact('user','curso'));
-    }
+     
 
     public function editarpago($id){
         $pago = Pago::findOrFail($id);

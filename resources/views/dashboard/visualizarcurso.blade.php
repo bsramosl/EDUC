@@ -1,6 +1,6 @@
 @extends('layouts.plantillabase')
 
-@section('title','Eventos')
+@section('title','Cursos')
 
 
 @section('usuario')
@@ -19,7 +19,7 @@
           <thead>
               <tr>
                   <th style="width: 1%">#</th>
-                  <th style="width: 20%">Nombre del Evento</th>
+                  <th style="width: 20%">Nombre del Curso</th>
                   <th style="width: 30%">Descripcion</th>
                   <th style="width: 10%">Creado</th> 
                   <th style="width: 10%" class="text-center"> stado</th>
@@ -27,20 +27,20 @@
               </tr>
           </thead>
           <tbody>
-            @foreach ($evento as $even)
+            @foreach ($curso as $cur)
               <tr> 
                   <td>#</td>
                 <td>
-                    <a> {{$even->nombre}}   </a> 
+                    <a> {{$cur->nombre}}   </a> 
                 </td>
                 <td>
-                    {{$even->descripcion}}
+                    {{$cur->descripcion}}
                 </td> 
                 <td>
-                    {{$even->fecha}}
+                    {{$cur->fecha}}
                 </td> 
                 <td class="project-state">
-                    @if (date("Y-m-d") > $even->fecha) 
+                    @if (date("Y-m-d") > $cur->fecha) 
                     <span class="badge badge-success"> Terminado </span>
                     @else
                     <span class="badge badge-success"> Activo </span>
@@ -48,7 +48,7 @@
                     
                 </td>
                 <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="{{url('usuevento',$even->id)}}">
+                    <a class="btn btn-primary btn-sm" href="{{url('usucurso',$cur->id)}}">
                         <i class="fas fa-folder">
                         </i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                         Vista

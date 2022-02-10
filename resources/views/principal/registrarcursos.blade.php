@@ -138,17 +138,7 @@
       return actions.order.create({
           application_context:{
               shipping_preference: "NO_SHIPPING"
-          }, 
-          payer:{
-              email_address:'sb-447uc439097137@personal.example.com',
-              name:{
-                  given_name:'John',
-                  surname:'Doe'
-              },
-              addres:{
-
-              }
-          },
+          },  
         purchase_units: [{
           amount: {
             value:'{{$curso->costo}}'

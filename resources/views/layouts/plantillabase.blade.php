@@ -166,9 +166,9 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a href="{{route('pago.register')}}" class="nav-link">
+                          <a href="{{route('admin.listarcurso')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Pagos</p>
+                            <p>Cursos Listar</p>
                           </a>
                         </li> 
                       </ul>
@@ -191,7 +191,7 @@
                         <li class="nav-item">
                           <a href="{{route('admin.listar')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Evento</p>
+                            <p>Evento Listar</p>
                           </a>
                         </li> 
                       </ul>

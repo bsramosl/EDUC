@@ -53,7 +53,7 @@ $i = 1
     <h6>Fecha:{{$cur->fecha}}</h6>
     <p id="lateral" >{{$cur->descripcion}}</p>
     <div class="buttons"> 
-    <a href="{{ route('principal.regcurso',$cur->id)}}" class="btn btn-primary btn-sm btn-course">Take A Course</a>
+    <a href="{{ route('principal.regcurso',$cur->id)}}" class="btn btn-primary btn-sm btn-course"> Registrarse</a>
     </div>
     <div class="skills">        
     </div>

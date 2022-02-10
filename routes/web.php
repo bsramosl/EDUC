@@ -119,10 +119,16 @@ Route::get('listeven',[AdminController::class,'listar'])
 ->name('admin.listar');
 
 
+Route::get('usuevento/{id}',[AdminController::class,'usuevento'])
+->name('admin.usuevento');
 
-Route::get('pagoregister',[PagoController::class,'create'])
-->name('pago.register'); 
+Route::get('listcursos',[AdminController::class,'listarcurso'])
+->name('admin.listarcurso');
 
+Route::get('usucurso/{id}',[AdminController::class,'usucurso'])
+->name('admin.usucurso');
+
+ 
 
 Route::post('pagosave',[PagoController::class,'save'])->name('pago.save'); 
 

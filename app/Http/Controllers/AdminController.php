@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Curso;
 use App\Models\Evento;
 use App\Models\PagoEvento;
+use App\Models\Pago;
 
 class AdminController extends Controller
 {
@@ -22,6 +23,24 @@ class AdminController extends Controller
         $data['pagoevento'] = PagoEvento::all();
         return view('dashboard.visualizarevento',$data);
     }
+
+    public function listarcurso(){
+        $data['curso'] = Curso::paginate(10); 
+        return view('dashboard.visualizarcurso',$data);
+    }
   
+    public function usuevento($id){
+        $data['evento'] = PagoEvento::where('evento_id',$id)
+        ->get();          
+        return view('dashboard.usuarioevento',$data);
+    }
+
+    public function usucurso($id){
+        $data['curso'] = Pago::where('curso_id',$id)
+        ->get();          
+        return view('dashboard.usuariocurso',$data);
+    }
+     
+
 
 }
