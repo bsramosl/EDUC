@@ -21,7 +21,12 @@
                         <h6>{{$even->fecha}}</h6>
                         <p style=" max-width: 260px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">{{$even->descripcion}}</p>
                         <div class="buttons">
+                            @if(auth()->check())
                             <a href="{{ route('principal.regevento',$even->id)}}" class="btn btn-primary btn-sm btn-course">Entrar</a>
+                            @else
+                            <a href="{{ route('register') }}" class="btn btn-primary btn-sm btn-course">Registro</a>
+                            @endif
+                           
                         </div>
                         <div class="skills">
                         </div>
