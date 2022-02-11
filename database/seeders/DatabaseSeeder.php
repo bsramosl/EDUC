@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         $curso->descripcion ='Las redes son la esencia de la transformación digital. La red es esencial para muchas funciones empresariales en la actualidad, incluidos los datos y las operaciones empresariales críticos, la ciberseguridad y mucho más. Una amplia variedad de carreras profesionales dependen de la red, por lo que es importante comprender lo que la red puede hacer, cómo funciona y cómo protegerla.';
         $curso->longitud ='70';
         $curso->nivel = 'Intermedio';
-        $curso->fecha = '2021/12/15';
+        $curso->fecha = '2022/04/15';
         $curso->costo = '100';
         $curso->save();
 
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         $evento->descripcion ='Aprenda el mejor plan de publicación y redacción de libros para es';
         $evento->localizacion ='En línea: en cualquier lugar con wifi rápido y sonido, Guayaquil Guayaquil Guayaquil, Provincia de Guayas. 90101';
         $evento->imagen = 'evento.jpg';
-        $evento->fecha = '2021/12/15';
+        $evento->fecha = '2022/04/15';
         $evento->costo = '100';
         $evento->save();
     }

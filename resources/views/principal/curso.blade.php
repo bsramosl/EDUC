@@ -49,8 +49,8 @@ $i = 1
     <td>
     <div class="col-md-4">
   <div class="card-container"> 
-    <h3> {{$cur->nombre}}</h3>
-    <h6>Fecha:{{$cur->fecha}}</h6>
+    <h3 id="titulo"> {{$cur->nombre}}</h3>
+    <h6 >Fecha:{{$cur->fecha}}</h6>
     <p id="lateral" >{{$cur->descripcion}}</p>
     <div class="buttons"> 
     <a href="{{ route('principal.regcurso',$cur->id)}}" class="btn btn-primary btn-sm btn-course"> Registrarse</a>
@@ -82,7 +82,7 @@ $i = 0
         overflow: hidden;}
 
     #titulo{
-        width: 230px;			
+		width: 350px;			
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
