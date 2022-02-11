@@ -15,6 +15,8 @@ class AdminController extends Controller
         $data['user'] = User::count();
         $data['curso'] = Curso::count();
         $data['evento'] = Evento::count();
+        $data['pagcurso'] = Curso::withCount(['pagos'])->get();
+        $data['pagevento'] = Evento::withCount(['pagoeventos'])->get();
         return view('principal.dashboard',$data);
     }
 
