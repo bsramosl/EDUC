@@ -16,7 +16,14 @@ class AdminController extends Controller
         $data['curso'] = Curso::count();
         $data['evento'] = Evento::count();
         $data['pagcurso'] = Curso::withCount(['pagos'])->get();
+        $data['pagcurso'] = $data['pagcurso']->sortByDesc('pagos_count');
+        $data['mencurso'] = Curso::withCount(['pagos'])->get();
+        $data['mencurso'] = $data['mencurso']->sortBy('pagos_count');
         $data['pagevento'] = Evento::withCount(['pagoeventos'])->get();
+        $data['pagevento'] =$data['pagevento']->sortByDesc('pagoeventos_count'); 
+        $data['menosvento'] = Evento::withCount(['pagoeventos'])->get();
+        $data['menosvento'] =$data['menosvento']->sortBy('pagoeventos_count'); 
+             
         return view('principal.dashboard',$data);
     }
 

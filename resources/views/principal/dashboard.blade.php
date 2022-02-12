@@ -63,58 +63,82 @@
         </div>
  
         <div class="row">
-          <div class="col-md-4">
-            <!-- Widget: user widget style 2 -->
-            <div class="card card-widget widget-user-2">
-              <!-- Add the bg color to the header using any of the bg-* classes -->
-              <div class="widget-user-header bg-warning">
-                <div class="widget-user-image">
-                  <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
-                </div>
-                <!-- /.widget-user-image -->
-                <h3 class="widget-user-username">Cursos</h3>
-                <h5 class="widget-user-desc">Mas Vistos</h5>
-              </div>
-              <div class="card-footer p-0">
-                <ul class="nav flex-column">
-                  @foreach ($pagcurso as $pagc)
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      {{$pagc->nombre}} <span class="float-right badge bg-primary">{{$pagc->pagos_count}}</span>
-                    </a>
-                  </li>                      
-                  @endforeach               
-                </ul>
-              </div>
-            </div>
-            <!-- /.widget-user -->
-          </div> 
 
-          <div class="col-md-4">
-            <!-- Widget: user widget style 2 -->
-            <div class="card card-widget widget-user-2">
-              <!-- Add the bg color to the header using any of the bg-* classes -->
-              <div class="widget-user-header bg-warning">
-                <div class="widget-user-image">
-                  <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar">
-                </div>
-                <!-- /.widget-user-image -->
-                <h3 class="widget-user-username">Cursos</h3>
-                <h5 class="widget-user-desc">Mas Vistos</h5>
-              </div>
-              <div class="card-footer p-0">
-                <ul class="nav flex-column">
-                  @foreach ($pagevento as $page)
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      {{$page->nombre}} <span class="float-right badge bg-primary">{{$page->pagoeventos_count}}</span>
-                    </a>
-                  </li>                      
-                  @endforeach               
-                </ul>
-              </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Reciente</h3> 
             </div>
-            <!-- /.widget-user -->
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              <ul class="products-list product-list-in-card pl-2 pr-2">
+                <li class="item">
+                  <div class="product-img">
+                    <!-- <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50"> -->
+                  </div>
+                  <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title">Curso Mas Visto
+                      @foreach ($pagcurso as $pagc)
+                      <span class="badge badge-warning float-right">{{$pagc->pagos_count}}</span></a>
+                      <span class="product-description" style=" max-width: 450px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        {{$pagc->nombre}}
+                     </span> 
+                      @break                 
+                      @endforeach  
+                  </div>
+                </li>
+                <!-- /.item -->
+                <li class="item">
+                  <div class="product-img">
+                    <!-- <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50"> -->
+                  </div>
+                  <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title">Curso Menos Visto
+                      @foreach ($mencurso as $pagc)
+                      <span class="badge badge-warning float-right">{{$pagc->pagos_count}}</span></a>
+                      <span class="product-description" style=" max-width: 450px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        {{$pagc->nombre}}
+                     </span> 
+                      @break                 
+                      @endforeach  
+                  </div>
+                </li>
+                <!-- /.item -->
+                <li class="item">
+                  <div class="product-img">
+                    <!-- <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50"> -->
+                  </div>
+                  <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title">
+                      Evento Mas Visto 
+                      @foreach ($pagevento as $pagev)
+                      <span class="badge badge-warning float-right">{{$pagev->pagoeventos_count}}</span></a>
+                      <span class="product-description" style=" max-width: 450px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        {{$pagev->nombre}}
+                     </span> 
+                      @break                 
+                      @endforeach 
+                  </div>
+                </li>
+                <!-- /.item -->
+                <li class="item">
+                  <div class="product-img">
+                    <!-- <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50"> -->
+                  </div>
+                  <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title">Evento Menos Visto
+                      @foreach ($menosvento as $meneve)
+                      <span class="badge badge-warning float-right">{{$meneve->pagoeventos_count}}</span></a>
+                      <span class="product-description" style=" max-width: 450px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        {{$meneve->nombre}}
+                     </span> 
+                      @break                 
+                      @endforeach 
+                  </div>
+                </li>
+                <!-- /.item -->
+              </ul>
+            </div>
+            <!-- /.card-body --> 
           </div> 
         </div>      
         <!-- /.row (main row) -->
