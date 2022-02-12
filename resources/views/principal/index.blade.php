@@ -63,7 +63,7 @@
 <div class="container">
     <div class="row animate-box">
         <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-            <h2>Categorias del Curso</h2>					 
+            <h2>NUESTROS SERVICIOS </h2>					 
         </div>
     </div>
     <div class="row">
@@ -92,11 +92,11 @@
         <div class="col-md-3 col-sm-6 text-center animate-box">
             <div class="services">
                 <span class="icon">
-                    <i class="fa fa-bullhorn"></i>
+                    <i class="fa fa-lightbulb-o"></i>
                 </span>
                 <div class="desc">
-                    <h3><a href="#">Practica de habilidades</a></h3>
-                    <p>Realizarás actividades de desarrollo de competencias directivas específicas en cada área temática.</p>
+                    <h3><a href="#">Consultorías</a></h3>
+                    <p>Desarrollamos proyectos de ciencia, tecnología, innovación, con profesionales con experiencia en varias ramas del conocimiento.</p>
                 </div>
             </div>
         </div>
@@ -106,30 +106,30 @@
                     <i class="fa fa-flask"></i>
                 </span>
                 <div class="desc">
-                    <h3><a href="#">Tecnologia científica</a></h3>
-                    <p>Desarrollamos actividades como: Bootcamps, hackathones, concursos, eventos y ferias de ciencia, tecnología, innovación y afines.</p>
+                    <h3><a href="#">Pre-Incubación</a></h3>
+                    <p>Creación de ideas de negocio, identificación de la oportunidad, validación, modelo de negocio, estructura de un plan de negocio.  </p>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 text-center animate-box">
             <div class="services">
                 <span class="icon">
-                    <i class="fa fa-picture-o"></i>
+                    <i class="fa fa-pencil-square-o"></i>
                 </span>
                 <div class="desc">
-                    <h3><a href="#">Contenido Creativo</a></h3>
-                    <p>Desarrollamos campañas y contenidos que te permiten llegar a tu grupo objetivo.</p>
+                    <h3><a href="#">Capacitaciones</a></h3>
+                    <p>Actualización de conocimientos mediante talleres, cursos, seminarios, encuentros, en las ramas de las ciencia, tecnología, innovación y afines</p>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-6 text-center animate-box">
             <div class="services">
                 <span class="icon">
-                    <i class="fa fa-film"></i>
+                    <i class="fa fa-grav"></i>
                 </span>
                 <div class="desc">
-                    <h3><a href="#">Material de estudio</a></h3>
-                    <p>Todos los contenidos didácticos son creados por los especialistas que van a impartir el curso, específicamente para él, de manera que el desarrollo didáctico sea realmente específico y concreto.</p>
+                    <h3><a href="#">Concursos Y Eventos</a></h3>
+                    <p>Desarrollamos actividades como: Bootcamps, hackathones, concursos, eventos y ferias de ciencia, tecnología, innovación y afines</p>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
 <div class="container">
     <div class="row animate-box">
         <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-            <h2><span>Testimonials</span></h2>
+            <h2><span>LA CORPORACIÓN</span></h2>
         </div>
     </div>
     <div class="row">
@@ -193,30 +193,21 @@
                     <div class="item">
                         <div class="testimony-slide active text-center">
                             <div class="user" style="background-image: url('{{ asset('img/img_bg_3.jpg')}}');"></div>
-                            <span>Mary Walker<br><small>Students</small></span>
+                            <span style="font-size:50px;">MISIÓN</span>
                             <blockquote>
-                                <p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+                                <p>&ldquo;Impulsar el desarrollo y progreso del Ecuador, a través de actividades/proyectos de ciencia, tecnología e innovación sinérgicamente con los actores del ecosistema de ciencia, tecnología e innovación del país, es decir con la acedemia, sector productivo, sector público y sector social.&rdquo;</p>
                             </blockquote>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testimony-slide active text-center">
                             <div class="user" style="background-image: url('{{ asset('img/img_bg_3.jpg')}}');"></div>
-                            <span>Mike Smith<br><small>Students</small></span>
+                            <span style="font-size:50px;">VISIÓN</span>
                             <blockquote>
-                                <p>&ldquo;Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+                                <p>&ldquo;Dentro de los próximos 5 años nos proyectamos como la comunidad de ciencia, tecnología e innovación más grande del país, líder y referente del progreso y desarrollo a través de la creatividad y el conocimiento de los ecuatorianos.&rdquo;</p>
                             </blockquote>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-slide active text-center">
-                            <div class="user" style="background-image: url('{{ asset('img/img_bg_3.jpg')}}');"></div>
-                            <span>Rita Jones<br><small>Teacher</small></span>
-                            <blockquote>
-                                <p>&ldquo;Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-                            </blockquote>
-                        </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

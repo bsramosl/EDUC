@@ -53,11 +53,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">		
-						<ul class="fh5co-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-github"></i></a></li>
+						<ul class="fh5co-social">							 
+							<li><a href="https://www.facebook.com/corpciti/"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://twitter.com/corpciti"><i class="fa fa-twitter"></i></a></li>
+						    <li><a href="https://ec.linkedin.com/company/corpciti"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCqmn1QdJfk26AAwzJLuh1XA"><i class="fa fa-youtube"></i></a></li>
+							 
 						</ul>
 					</div>
 				</div>
@@ -67,7 +68,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="{{ route('principal.index') }}"><i class="fa fa-book"></i>Educ<span>.</span></a></div>
+						<div id="fh5co-logo"><a href="{{ route('principal.index') }}"> <img style="width: 70px; height: 60px;" src="{{ asset('img/logo-web-2018-2.png')}}"></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1"> 
 						<ul>

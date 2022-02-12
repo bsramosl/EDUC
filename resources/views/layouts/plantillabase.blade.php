@@ -77,23 +77,27 @@
               <!-- Brand Logo -->
               <a href="{{ route('principal.index') }}" class="brand-link">
               <i class="fa fa-users" class="brand-image img-circle elevation-3" style="opacity: .8"></i>
-                <span class="brand-text font-weight-light">EDUC.</span>
+                <span class="brand-text font-weight-light">CORPCITI.</span>
               </a>
           
               <!-- Sidebar -->
               <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
+
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                  <!-- <div class="image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                  </div>-->
+                  <div class="image">
+                    @if ( Auth::user()->imagen  != null)
+                        <img class="img-circle elevation-2" style="width: 34px;height: 34px;"  src="{{ asset('img/usuario').'/'. Auth::user()->imagen}}" alt="Foto de perfil de usuario">
+                    @else
+                        <img class="img-circle elevation-2" src="{{ asset('img/usuario/user.png')}}" alt="Foto de perfil de usuario">
+                    @endif
+                 
+                  </div>
                   <div class="info">
-                    <a href="#" class="d-block">@yield('usuario') 
-                    </a>
+                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                   </div>
                 </div>
-           
-                <!-- Sidebar Menu -->
+ 
                 <nav class="mt-2">
                   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class

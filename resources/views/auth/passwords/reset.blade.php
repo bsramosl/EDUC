@@ -19,12 +19,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>CORP</b>CITI</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
+            <p class="login-box-msg">Estás a un paso de tu nueva contraseña, recupera tu contraseña ahora.</p>
 
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
@@ -61,7 +61,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                               required autocomplete="new-password" placeholder="Confirm Password">
+                               required autocomplete="new-password" placeholder="Confirmar Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Change password</button>
+                            <button type="submit" class="btn btn-primary btn-block">Cambia la contraseña</button>
                         </div>
                         <!-- /.col -->
                     </div>

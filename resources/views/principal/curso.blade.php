@@ -29,7 +29,7 @@ $i = 1
     <td>
     <div class="col-md-4">
   <div class="card-container"> 
-    <h3> {{$cur->nombre}}</h3>
+    <h3 id="titulo"> {{$cur->nombre}}</h3>
     <h6>Fecha:{{$cur->fecha}}</h6>
     <p id="lateral" >{{$cur->descripcion}}</p>
     <div class="buttons"> 

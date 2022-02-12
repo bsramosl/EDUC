@@ -61,7 +61,7 @@
           
           <!-- ./col -->
         </div>
-
+ 
         <div class="row">
           <div class="col-md-4">
             <!-- Widget: user widget style 2 -->

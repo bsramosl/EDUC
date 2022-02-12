@@ -17,7 +17,8 @@
 
 <div class="col-md-4">
   <div class="card-container"> 
-    <h3>{{$pag->curso->nombre}}</h3>
+    <h3 style="width: 350px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+		{{$pag->curso->nombre}}</h3>
     <h6>{{$pag->curso->fecha}}</h6>
     <div class="buttons"> 
 	  <a href="{{ route('principal.infocurso',$pag->curso->id) }}" class="btn btn-primary btn-sm btn-course">Entrar</a>       
