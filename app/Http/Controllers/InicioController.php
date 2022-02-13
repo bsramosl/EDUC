@@ -23,7 +23,9 @@ class InicioController extends Controller
 
     public function curso($id){
         $data['pago'] = Pago::where('user_id',$id)->get();   
-        $data['curso'] = Curso::paginate(10);
+        $data['curso'] = Curso::withCount(['pagos'])->get();
+        $data['curso'] =$data['curso']->sortBy('pagos_count'); 
+      
         return view('principal.curso',$data);
     }
 

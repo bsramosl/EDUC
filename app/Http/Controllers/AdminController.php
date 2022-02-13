@@ -34,7 +34,9 @@ class AdminController extends Controller
     }
 
     public function listarcurso(){
-        $data['curso'] = Curso::paginate(10); 
+        $data['curso'] = Curso::withCount(['pagos'])->get();
+        $data['curso'] =$data['curso']->sortByDesc('pagos_count'); 
+ 
         return view('dashboard.visualizarcurso',$data);
     }
   

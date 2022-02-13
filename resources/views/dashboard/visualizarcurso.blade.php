@@ -22,7 +22,8 @@
                   <th style="width: 20%">Nombre del Curso</th>
                   <th style="width: 30%">Descripcion</th>
                   <th style="width: 10%">Creado</th> 
-                  <th style="width: 10%" class="text-center"> stado</th>
+                  <th style="width: 10%">Usuarios</th> 
+                  <th style="width: 10%" class="text-center"> Estado</th>
                   <th style="width: 10%">Opciones </th>
               </tr>
           </thead>
@@ -33,20 +34,26 @@
                 <td>
                     <a> {{$cur->nombre}}   </a> 
                 </td>
-                <td>
+                <td style=" max-width: 260px;			
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;">
                     {{$cur->descripcion}}
                 </td> 
                 <td>
                     {{$cur->fecha}}
+                </td>
+                <td class="project-state">
+                   {{$cur->pagos_count}}                    
                 </td> 
                 <td class="project-state">
                     @if (date("Y-m-d") > $cur->fecha) 
-                    <span class="badge badge-success"> Terminado </span>
+                    <span class="badge badge-danger"> Terminado </span>
                     @else
                     <span class="badge badge-success"> Activo </span>
                     @endif
                     
-                </td>
+                </td>               
                 <td class="project-actions text-right">
                     <a class="btn btn-primary btn-sm" href="{{url('usucurso',$cur->id)}}">
                         <i class="fas fa-folder">
